@@ -1,0 +1,120 @@
+.leaf_perspective {
+    position: relative;
+    perspective: 800px;
+    perspective-origin: 50% -200px;
+}
+
+.leaf_box {
+    --size: 100px;
+    aspect-ratio: 1;
+    position: relative;
+    transform-style: preserve-3d;
+    width: var(--size);
+    animation: rotate 4s linear infinite;
+}
+.leaf_face {
+    --size: 100px;
+    aspect-ratio: 1;
+    position: absolute;
+    width: var(--size);
+    transform-style: preserve-3d;
+    background-color: hsl(
+    39,
+    100%,
+    var(--lightness)
+  );
+}
+
+
+.leaf_face.leaf_box_right {
+ left: 100%;
+ transform-origin: left;
+ transform: rotateY(90deg);
+ --lightness: 70%;
+}
+
+
+.leaf_face.leaf_box_left{
+ right: 100%;
+ transform-origin: right;
+ transform: rotateY(-90deg);
+ --lightness: 70%;
+}
+
+
+.leaf_face.leaf_box_top {
+ bottom: 100%;
+ transform-origin: bottom;
+ transform: rotateX(90deg);
+ display: flex;
+ --lightness: 74%;
+}
+
+
+.leaf_face.leaf_box_bottom {
+  top: 100%;
+  transform-origin: top;
+  transform: rotateX(-90deg);
+  --lightness: 74%;
+}
+
+
+.leaf_face.leaf_box_front {
+    --lightness: 66%;
+}
+
+
+.leaf_face.leaf_box_back {
+    bottom: 200%;
+    transform-origin: center 150px -50px;
+    transform: rotateX(180deg);
+    --lightness: 78%;
+}
+
+.leaf_face.leaf_box_top .leaf_box_top_1 {
+    width: 50%;
+    height: 100%;
+    background-color: black;
+    transform-origin: left;
+    animation: rotate_two 2s ease-in infinite;
+}
+.leaf_face.leaf_box_top .leaf_box_top_2 {
+    width: 50%;
+    height: 100%;
+    background-color: red;
+    transform-origin: right;
+    animation: rotate_three 2s ease-in infinite;  /*+*/
+}
+
+@keyframes rotate {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+
+  @keyframes rotate_two {
+    from {
+        transform: rotateY(0);
+      }
+      80% {
+        transform: rotateY(-160deg);
+      }
+      to {
+        transform: rotateY(0);
+      }
+  }
+
+  @keyframes rotate_three {
+    from {
+        transform: rotateY(0);
+      }
+      80% {
+        transform: rotateY(160deg);
+      }
+      to {
+        transform: rotateY(0);
+      }
+  }

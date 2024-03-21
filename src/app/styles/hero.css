@@ -1,0 +1,51 @@
+#hero {
+    position: absolute;
+    top: 0;
+    perspective: 800px;
+    perspective-origin: 50%;
+}
+
+#hero img:nth-child(1) {
+    transform-style: preserve-3d;
+    transform-origin: 50%;
+    position: absolute;
+}
+
+#hero .hero_stand {
+    transform-style: preserve-3d;
+    transform-origin: 50%;
+    position: absolute;
+}
+
+#hero .hero_stand .stand {
+    position: absolute;
+    bottom: -150px;
+    right:0;
+    transform-style: preserve-3d;
+    transform-origin: 50%;
+    transform:translateZ(-203px) translateY(45px) translateX(197px);
+}
+
+#hero .hero_stand .vows {
+    position: absolute;
+    bottom: 0;
+    right:0;
+    transform-style: preserve-3d;
+    transform-origin: 50%;
+    transform:translateZ(-174px) translateY(198px) translateX(-117px);
+}
+
+#hero .hero_vows {
+    transform-style: preserve-3d;
+    transform-origin: 50%;
+    position: absolute;
+}
+
+#hero .hero_vows img {
+    transform-style: preserve-3d;
+    transform-origin: 50%;
+    position: absolute;
+    bottom: 60px;
+    right:20px;
+    transform: translateZ(-202px) translateX(-8px) translateY(42px)
+}
